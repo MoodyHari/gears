@@ -1,0 +1,563 @@
+{% extends "parent_header.html" %}
+{% block real_content %}
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title> Other Activities </title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen"> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> -->
+
+</head>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+  html,
+  body {
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+
+  .wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+
+  .container-fostrap {
+    display: table-cell;
+    padding: 1em;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .fostrap-logo {
+    width: 100px;
+    margin-bottom:15px
+  }
+  h2.heading {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 900;
+    margin: 0 0 0.5em;
+    font-family: 'Roboto', sans-serif;
+
+    color: #505050;
+  }
+  @media (min-width: 450px) {
+    h3.heading {
+      font-size: 3.55em;
+    }
+  }
+  @media (min-width: 760px) {
+    h3.heading {
+      font-size: 3.05em;
+    }
+  }
+  @media (min-width: 900px) {
+    h3.heading {
+      font-size: 3.25em;
+      margin: 0 0 0.3em;
+    }
+  }
+  .card {
+    display: block;
+      margin-bottom: 20px;
+      line-height: 1.42857143;
+      background-color: #fff;
+      border-radius: 2px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+      transition: box-shadow .25s;
+  }
+  .card:hover {
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .img-card {
+    width: 100%;
+    height:200px;
+    border-top-left-radius:2px;
+    border-top-right-radius:2px;
+    display:block;
+      overflow: hidden;
+  }
+  .img-card img{
+    width: 100%;
+    height: 200px;
+    object-fit:cover;
+    transition: all .25s ease;
+  }
+  .card-content {
+    padding:15px;
+    text-align:left;
+  }
+  .card-title {
+    margin-top:0px;
+    font-weight: 700;
+    font-size: 1.65em;
+  }
+  .card-title a {
+    color: #000;
+    text-decoration: none !important;
+  }
+  .card-read-more {
+    border-top: 1px solid #D4D4D4;
+  }
+  .card-read-more a {
+    text-decoration: none !important;
+    padding:10px;
+    font-weight:600;
+    text-transform: uppercase
+  }
+
+
+
+
+  /* model style */
+  .seminor-login-modal-body .close{
+   position: relative;
+   top: -25px;
+   left: 10px;
+  color: #E53935;
+  }
+  .seminor-login-modal-body .close{
+      opacity:0.75;
+  }
+
+  .seminor-login-modal-body .close:focus, .seminor-login-modal-body .close:hover {
+      color: #E53935;
+   opacity: 1;
+   text-decoration: none;
+   outline:0;
+  }
+
+  .seminor-login-modal .modal-dialog .modal-content{
+      border-radius:0px;
+  }
+
+  /* form animation */
+  .seminor-login-form .form-group {
+    position: relative;
+    margin-bottom: 1.5em !important;
+  }
+  .seminor-login-form .form-control{
+   border: 0px solid #ced4da !important;
+   border-bottom:1px solid #adadad !important;
+   border-radius:0 !important;
+  }
+  .seminor-login-form .form-control:focus, .seminor-login-form .form-control:active{
+   outline:none !important;
+   outline-width: 0;
+   border-color: #adadad !important;
+   box-shadow: 0 0 0 0.2rem transparent;
+  }
+  *:focus {
+   outline: none;
+  }
+  .seminor-login-form{
+   padding: 2em 0 0;
+  }
+
+  .form-control-placeholder {
+  position: absolute;
+  top: 0;
+  padding: 7px 0 0 13px;
+  transition: all 200ms;
+  opacity: 0.5;
+  border-top: 0px;
+  border-left: 0;
+  border-right: 0;
+  }
+
+  .form-control:focus + .form-control-placeholder,
+  .form-control:valid + .form-control-placeholder {
+  font-size: 75%;
+  -webkit-transform: translate3d(0, -100%, 0);
+         transform: translate3d(0, -100%, 0);
+  opacity: 1;
+  }
+
+  .container-checkbox input {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+  }
+  .checkmark-box {
+   position: absolute;
+   top: -5px;
+   left: 0;
+   height: 25px;
+   width: 25px;
+   background-color: #adadad;
+  }
+  .container-checkbox {
+   display: block;
+   position: relative;
+   padding-left: 40px;
+   margin-bottom: 20px;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: bold;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   line-height: 1.1;
+  }
+  .container-checkbox input:checked ~ .checkmark-box:after {
+   color: #fff;
+  }
+  .container-checkbox input:checked ~ .checkmark-box:after {
+   display: block;
+  }
+  .container-checkbox .checkmark-box:after {
+   left: 10px;
+   top: 4px;
+   width: 7px;
+   height: 15px;
+   border: solid white;
+   border-width: 0 3px 3px 0;
+   -webkit-transform: rotate(45deg);
+   -ms-transform: rotate(45deg);
+   transform: rotate(45deg);
+  }
+  .checkmark:after, .checkmark-box:after {
+   content: "";
+   position: absolute;
+   display: none;
+  }
+  .container-checkbox input:checked ~ .checkmark-box {
+   background-color: #f58220;
+   border: 0px solid transparent;
+  }
+  .btn-check-log .btn-check-login {
+   font-size: 16px;
+   padding: 10px 0;
+  }
+
+  .forgot-pass-fau a {
+      text-decoration: none !important;
+      font-size: 14px;
+  }
+  .text-primary-fau {
+      color: #1959a2;
+  }
+
+  .select-form-control-placeholder{
+    font-size: 100%;
+      padding: 7px 0 0 13px;
+      margin: 0;
+  }
+
+
+</style>
+<body>
+
+
+
+  <section class="wrapper">
+      <div class="container-fostrap">
+          <div>
+              <!-- <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo"/> -->
+              <h2 class="heading" >
+                   MUSIC &amp; DANCE
+              </h2><br>
+          </div>
+          <div class="content">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-xs-12 col-sm-12  col-lg-4 col-md-12">
+                          <div class="card">
+                              <a class="img-card" href="">
+                              <img src="static/images/music.jpg" />
+                            </a>
+                              <div class="card-content">
+                                  <h4 class="card-title">
+                                      <a> Instrumental Music  </a>
+                                  </h4>
+                                  <div class="text">
+                                    <ul class="list-group list-group-flush">
+                                      <li class="list-group-item"> Guitar </li>
+                                      <li class="list-group-item"> Violin </li>
+                                      <li class="list-group-item"> Mrudangam </li>
+                                      <li class="list-group-item"> Keyboard </li>
+                                      <!-- <li class="list-group-item"></li> -->
+                                    </ul>
+                      						</div>
+                              </div>
+                              <div class="card-read-more">
+                                  <a data-toggle="modal" data-target="#sem-reg" class="btn btn-link btn-block">
+                                      Get In Touch
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-4 col-md-12">
+                          <div class="card">
+                              <a class="img-card" href="">
+                              <img src="static/images/dance.jpg" />
+                            </a>
+                              <div class="card-content">
+                                  <h4 class="card-title">
+                                      <a> Dance
+                                    </a>
+                                  </h4>
+                                  <div class="text">
+                                    <ul class="list-group list-group-flush">
+                                      <li class="list-group-item"> Classical </li>
+                                      <li class="list-group-item"> Contemporary </li>
+                                      <!-- <li class="list-group-item"></li> -->
+                                    </ul>
+                                  </div>
+                              </div>
+                              <div class="card-read-more">
+                                <a data-toggle="modal" data-target="#sem-reg" class="btn btn-link btn-block">
+                                    Get In Touch
+                                </a>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- <div class="col-xs-12 col-sm-4">
+                          <div class="card">
+                              <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                              <img src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />
+                            </a>
+                              <div class="card-content">
+                                  <h4 class="card-title">
+                                      <a href="">Commerce Stream
+                                    </a>
+                                  </h4>
+                                  <div class="text">
+                                    <ul class="list-group list-group-flush">
+                                      <li class="list-group-item"> Accountancy </li>
+                                      <li class="list-group-item"> Economics </li>
+                                      <li class="list-group-item"> Business Studies </li>
+                                      <li class="list-group-item"> Statistics </li>
+                                      <li class="list-group-item"> Computer Science </li>
+                                      <li class="list-group-item"> CA &amp; CPT </li>
+                                      <li class="list-group-item"></li>
+                                    </ul>
+                                  </div>
+                              </div>
+                              <div class="card-read-more">
+                                <a data-toggle="modal" data-target="#sem-reg" class="btn btn-link btn-block">
+                                    Get In Touch
+                                </a>
+                              </div>
+                          </div>
+                      </div> -->
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+
+
+    <section class="wrapper">
+        <div class="container-fostrap">
+            <div>
+                <!-- <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo"/> -->
+                <h2 class="heading" >
+                  ART / PAINTING
+                </h2><br>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-lg-4 col-md-12">
+                            <div class="card">
+                                <a class="img-card" href="">
+                                <img src="static/images/paint.jpg" />
+                              </a>
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a> Group 1 - (10-14 Years)  </a>
+                                    </h4>
+                                    <div class="text">
+                                      <ul class="list-group list-group-flush">
+                                        <!-- <li class="list-group-item"> CLeaf Printing </li> -->
+                                        <li class="list-group-item"> Leaf  Printing </li>
+                                        <li class="list-group-item"> Finger Print Art </li>
+                                        <li class="list-group-item"> Line Art </li>
+                                        <li class="list-group-item"> Basics of Potrait </li>
+                                        <li class="list-group-item"> Charcoal Pencil </li>
+                                        <li class="list-group-item"> Stencil - Drawing and Cutting along with a T-shirt Printing </li>
+                                        <li class="list-group-item"> Calligraphy </li>
+                                        <!-- <li class="list-group-item"> Leaf Printing </li> -->
+                                        <!-- <li class="list-group-item"></li> -->
+                                      </ul>
+                        						</div>
+                                </div>
+                                <div class="card-read-more">
+                                    <a data-toggle="modal" data-target="#sem-reg" class="btn btn-link btn-block">
+                                        Get In Touch
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-lg-4 col-md-12">
+                            <div class="card">
+                              <a class="img-card" href="">
+                                  <img src="static/images/painting.jpg" />
+                              </a>
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a >Group 2 - (15-18 Years)
+                                      </a>
+                                    </h4>
+                                    <div class="text">
+                                      <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"> Colour Theory On Canvas </li>
+                                        <li class="list-group-item"> Paper and Cloth File </li>
+                                        <li class="list-group-item"> Pot Painting </li>
+                                        <li class="list-group-item"> Glass Painting </li>
+
+                                        <li class="list-group-item"> Stippling Art </li>
+                                        <li class="list-group-item"> Calligraphy </li>
+                                        <li class="list-group-item"> A tree of good hope </li>
+                                        <!-- <li class="list-group-item"></li> -->
+                                      </ul>
+                        						</div>
+                                </div>
+                                <div class="card-read-more">
+                                  <a data-toggle="modal" data-target="#sem-reg" class="btn btn-link btn-block">
+                                      Get In Touch
+                                  </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-xs-12 col-sm-4">
+                            <div class="card">
+                                <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                <img src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />
+                              </a>
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a href="">Commerce Stream
+                                      </a>
+                                    </h4>
+                                    <div class="text">
+                                      <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"> Accountancy </li>
+                                        <li class="list-group-item"> Economics </li>
+                                        <li class="list-group-item"> Business Studies </li>
+                                        <li class="list-group-item"> Statistics </li>
+                                        <li class="list-group-item"> Computer Science </li>
+                                        <li class="list-group-item"> CA &amp; CPT </li>
+                                        <li class="list-group-item"></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                                <div class="card-read-more">
+                                  <a data-toggle="modal" data-target="#sem-reg" class="btn btn-link btn-block">
+                                      Get In Touch
+                                  </a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+      <!-- The Modal -->
+      <div class="modal fade seminor-login-modal" data-backdrop="static" id="sem-reg">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body seminor-login-modal-body">
+             <h5 class="modal-title text-center"> Contact Us </h5>
+
+              <button type="button" class="close" data-dismiss="modal">
+                  <span><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+              </button>
+
+              <form class="seminor-login-form" action="/enquiry_save1" method="post">
+                <div class="form-group">
+                  <input type="name" class="form-control" name="name" required autocomplete="off">
+                  <label class="form-control-placeholder" for="name"> Name</label>
+                </div>
+                <div class="form-group">
+                  <input type="tel" class="form-control" name="ph_number" required autocomplete="off">
+                  <label class="form-control-placeholder" for="name">Phone Number</label>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" required autocomplete="off">
+                  <label class="form-control-placeholder" for="email">Email address</label>
+                </div>
+
+                <div class="form-group">
+                  <!-- <label class="select-form-control-placeholder" for="sel1"> Gender </label> -->
+                  <select class="form-control" id="sel1" name="branch">
+                    <option value=""> --Select Branch -- </option>
+                    <option value="malleswaram"> Malleswaram </option>
+                    <option value="dasarahalli"> T. Dasarahalli </option>
+                    <option value="yelahanka"> Yelahanka </option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <!-- <label class="select-form-control-placeholder" for="sel1"> Gender </label> -->
+                  <select class="form-control" id="sel1" name="interest">
+                    <option value=""> -- Interested In ? -- </option>
+                    <option value="music"> Music </option>
+                    <option value="art_painting"> Art/Painting </option>
+                    <option value="dance"> Dance </option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <input type="name" class="form-control" name="school" required autocomplete="off">
+                  <label class="form-control-placeholder" for="name"> School ? </label>
+                </div>
+
+                <div class="form-group">
+                  <input type="tel" class="form-control" name="classes" required autocomplete="off">
+                  <label class="form-control-placeholder" for="name"> Class ? </label>
+                </div>
+                <!-- <div class="form-group">
+                  <input type="password" class="form-control" name="password" required autocomplete="off">
+                  <label class="form-control-placeholder" for="password">Password</label>
+                </div> -->
+
+                <!-- <div class="form-group forgot-pass-fau text-center ">
+                  <a href="/terms-conditions/" class="text-secondary">
+                      By Clicking "SIGN UP" you accept our<br>
+                  <span class="text-primary-fau">Terms and Conditions</span>
+                  </a>
+                </div> -->
+
+              <div class="btn-check-log">
+                  <button type="submit" class="btn btn-block btn-outline-danger">SUBMIT </button>
+              </div>
+              <!-- <div class="create-new-fau text-center pt-3">
+                <a href="#" class="text-primary-fau"><span data-toggle="modal" data-target="#sem-login" data-dismiss="modal">Already Have An Account</span></a>
+              </div> -->
+            </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+</body>
+</html>
+{% endblock %}

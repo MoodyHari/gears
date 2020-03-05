@@ -1,0 +1,165 @@
+{% extends "parent_header.html" %}
+{% block real_content %}
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <title> Gallery </title>
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+</head>
+<style>
+  body {
+    background-color:#1d1d1d !important;
+    font-family: "Asap", sans-serif;
+    color:#989898;
+    margin:10px;
+    font-size:16px;
+  }
+
+  #demo {
+    height:100%;
+    position:relative;
+    overflow:hidden;
+  }
+
+
+  .green{
+    background-color:#6fb936;
+  }
+          .thumb{
+              margin-bottom: 30px;
+          }
+
+          .page-top{
+              margin-top:85px;
+          }
+
+
+  img.zoom {
+      width: 100%;
+      height: 200px;
+      border-radius:5px;
+      object-fit:cover;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      -ms-transition: all .3s ease-in-out;
+  }
+
+
+  .transition {
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2);
+  }
+      .modal-header {
+
+       border-bottom: none;
+  }
+      .modal-title {
+          color:#000;
+      }
+      .modal-footer{
+        display:none;
+      }
+
+</style>
+<body>
+
+
+
+      <!-- Page Content -->
+     <div class="container page-top">
+
+
+
+          <div class="row">
+
+              {% for i in hj %}
+              <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a href="{{i.img_src}}" class="fancybox" rel="ligthbox">
+                      <img  src="{{i.img_src}}" class="zoom img-fluid "  alt="">
+                  </a>
+              </div>
+              {% endfor %}
+<!--
+              <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a href="static/images/DSC_9841.jpg"  class="fancybox" rel="ligthbox">
+                      <img  src="static/images/DSC_9841.jpg" class="zoom img-fluid"  alt="">
+                  </a>
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a href="static/images/DSC_9824.jpg" class="fancybox" rel="ligthbox">
+                      <img  src="static/images/DSC_9824.jpg" class="zoom img-fluid "  alt="">
+                  </a>
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a href="static/images/DSC_9831.jpg" class="fancybox" rel="ligthbox">
+                      <img  src="static/images/DSC_9831.jpg" class="zoom img-fluid "  alt="">
+                  </a>
+              </div>
+
+               <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a href="static/images/DSC_9845.jpg" class="fancybox" rel="ligthbox">
+                      <img  src="static/images/DSC_9845.jpg" class="zoom img-fluid "  alt="">
+                  </a>
+              </div>
+
+               <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a href="static/images/cr2.jpeg" class="fancybox" rel="ligthbox">
+                      <img  src="static/images/cr2.jpeg" class="zoom img-fluid "  alt="">
+                  </a>
+              </div>
+
+               <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a href="static/images/DSC_9868.jpg" class="fancybox" rel="ligthbox">
+                      <img  src="static/images/DSC_9868.jpg" class="zoom img-fluid "  alt="">
+                  </a>
+              </div>
+
+               <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                  <a href="static/images/logo-1.jpg" class="fancybox" rel="ligthbox">
+                      <img  src="static/images/logo-1.jpg" class="zoom img-fluid "  alt="">
+                  </a>
+              </div>
+ -->
+
+
+
+         </div>
+
+
+
+
+      </div>
+
+
+
+</body>
+<script>
+  $(document).ready(function(){
+  $(".fancybox").fancybox({
+        openEffect: "none",
+        closeEffect: "none"
+    });
+
+    $(".zoom").hover(function(){
+
+		$(this).addClass('transition');
+	}, function(){
+
+		$(this).removeClass('transition');
+	});
+});
+
+</script>
+</html>
+{% endblock %}

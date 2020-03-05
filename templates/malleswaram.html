@@ -1,0 +1,475 @@
+{% extends "parent_header.html" %}
+{% block real_content %}
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title> Branches </title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+</head>
+<style>
+.how-section1{
+    margin-top:-15%;
+    padding: 10%;
+}
+.how-section1 h4{
+    color: #ffa500;
+    /* font-weight: bold; */
+    font-size: 30px;
+    font-family: 'Roboto Slab', serif;
+}
+li,p,h5{
+  font-family: 'Roboto Slab', serif;
+}
+.how-section1 .subheading{
+    color: #3931af;
+    font-size: 16px;
+}
+.how-section1 .row
+{
+    margin-top: 10%;
+}
+.how-img
+{
+    text-align: center;
+}
+.how-img img{
+    width: 40%;
+}
+
+
+  /* model style */
+  .seminor-login-modal-body .close{
+   position: relative;
+   top: -25px;
+   left: 10px;
+  color: #E53935;
+  }
+  .seminor-login-modal-body .close{
+      opacity:0.75;
+  }
+
+  .seminor-login-modal-body .close:focus, .seminor-login-modal-body .close:hover {
+      color: #E53935;
+   opacity: 1;
+   text-decoration: none;
+   outline:0;
+  }
+
+  .seminor-login-modal .modal-dialog .modal-content{
+      border-radius:0px;
+  }
+
+  /* form animation */
+  .seminor-login-form .form-group {
+    position: relative;
+    margin-bottom: 1.5em !important;
+  }
+  .seminor-login-form .form-control{
+   border: 0px solid #ced4da !important;
+   border-bottom:1px solid #adadad !important;
+   border-radius:0 !important;
+  }
+  .seminor-login-form .form-control:focus, .seminor-login-form .form-control:active{
+   outline:none !important;
+   outline-width: 0;
+   border-color: #adadad !important;
+   box-shadow: 0 0 0 0.2rem transparent;
+  }
+  *:focus {
+   outline: none;
+  }
+  .seminor-login-form{
+   padding: 2em 0 0;
+  }
+
+  .form-control-placeholder {
+  position: absolute;
+  top: 0;
+  padding: 7px 0 0 13px;
+  transition: all 200ms;
+  opacity: 0.5;
+  border-top: 0px;
+  border-left: 0;
+  border-right: 0;
+  }
+
+  .form-control:focus + .form-control-placeholder,
+  .form-control:valid + .form-control-placeholder {
+  font-size: 75%;
+  -webkit-transform: translate3d(0, -100%, 0);
+         transform: translate3d(0, -100%, 0);
+  opacity: 1;
+  }
+
+  .container-checkbox input {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+  }
+  .checkmark-box {
+   position: absolute;
+   top: -5px;
+   left: 0;
+   height: 25px;
+   width: 25px;
+   background-color: #adadad;
+  }
+  .container-checkbox {
+   display: block;
+   position: relative;
+   padding-left: 40px;
+   margin-bottom: 20px;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: bold;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   line-height: 1.1;
+  }
+  .container-checkbox input:checked ~ .checkmark-box:after {
+   color: #fff;
+  }
+  .container-checkbox input:checked ~ .checkmark-box:after {
+   display: block;
+  }
+  .container-checkbox .checkmark-box:after {
+   left: 10px;
+   top: 4px;
+   width: 7px;
+   height: 15px;
+   border: solid white;
+   border-width: 0 3px 3px 0;
+   -webkit-transform: rotate(45deg);
+   -ms-transform: rotate(45deg);
+   transform: rotate(45deg);
+  }
+  .checkmark:after, .checkmark-box:after {
+   content: "";
+   position: absolute;
+   display: none;
+  }
+  .container-checkbox input:checked ~ .checkmark-box {
+   background-color: #f58220;
+   border: 0px solid transparent;
+  }
+  .btn-check-log .btn-check-login {
+   font-size: 16px;
+   padding: 10px 0;
+  }
+
+  .forgot-pass-fau a {
+      text-decoration: none !important;
+      font-size: 14px;
+  }
+  .text-primary-fau {
+      color: #1959a2;
+  }
+
+  .select-form-control-placeholder{
+    font-size: 100%;
+      padding: 7px 0 0 13px;
+      margin: 0;
+  }
+
+
+</style>
+<body>
+
+
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{{gh[0]['img_src']}}" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{gh[1]['img_src']}}" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{gh[2]['img_src']}}" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+      <!-- <div class="row">
+        <div class="col-lg-6 col-sm-6 col-xs-12 col-md-6">
+          <img src="static/images/logo-1.png" alt="Responsive image" style="width:200px;height:150px;">
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12 col-md-6"><br><br>
+            <p> The Jump Start advantage for pre-primary children is unique to The Brigade Schools and seeks to make children independent – in looking after themselves, independently, and in thinking logically. </p>
+          </div>
+      </div> -->
+    <!-- <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12">
+
+    </div> -->
+  <!-- </div> -->
+<!-- </div><br><br><br> -->
+
+<div class="card text-center">
+  <div class="card-header bg-success" style="color:white;font-family: 'Roboto Slab', serif;">
+      GEARS @ MLM
+      <p class="card-text"> Email : mlm@gearsacademy.org </p>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">GEARS Academy(R), Malleswaram  </h5>
+    <p class="card-text">Situated in the heart of the city, it is in the prime locality. </p>
+      <p class="card-text">It became an integral part of the locality which rapidly get started recognised by the education aspirants.</p>
+        <p class="card-text"> It caters with the best class coaching facilities for 9 and 10 graders of ICSE, CBSE and STATE Boards/Syllabus and PU (Science and Commerce).</p>
+        <p class="card-text"> Pioneer with TAL (Technology Aided Lessons) possessing with its own APP providing the best in standard coaching for NEET, JEE(Mains & Advanced) and K- CET. </p>
+
+    <!-- <a href="#" class="btn btn-primary"> For further details </a> -->
+  </div>
+
+</div>
+
+<div class="how-section1">
+
+
+                      <div class="row">
+
+                          <div class="col-md-6 how-img">
+                               <img src="https://image.ibb.co/ctSLu9/Work_Section2_freelance_img3.png" class="rounded-circle img-fluid" alt=""/>
+                          </div>
+                          <div class="col-md-6">
+                              <h4  style="border-bottom: 3px solid #000;padding-bottom:5px;white-space: pre;"> VISION AND MISSION </h4>
+
+                              <h4 class="subheading">The GEARS Academy has a wide vision of spreading education with stress free, leveled approach and interactive sessions.</h4>
+                              <h4 class="subheading"> A student friendly education ensures  each and everyone to score high in board exams . </h4>
+                              <h4 class="subheading"> GEARS Academy has a mission to ensure qualitative education and scholastic empowerment.</h4>
+                <!-- <p class="text-muted">Freedom to work on ideal projects. On GetLance, you run your own business and choose your own clients and projects. Just complete your profile and we’ll highlight ideal jobs. Also search projects, and respond to client invitations.
+                                              Wide variety and high pay. Clients are now posting jobs in hundreds of skill categories, paying top price for great work.
+                                              More and more success. The greater the success you have on projects, the more likely you are to get hired by clients that use GetLance.</p> -->
+                          </div>
+                      </div>
+
+  <div class="row">
+      <div class="col-md-6">
+        <h4  style="border-bottom: 3px solid #000;padding-bottom:5px;white-space: pre;"> OUR MOTTO </h4>
+          <!-- <h4>Get hired quickly</h4> -->
+          <h4 class="subheading">EDUCATION is for LIFE and LIFE is for EDUCATION</h4>
+
+<!--                      <p class="text-muted">Streamlined hiring. GetLance’s sophisticated algorithms highlight projects you’re a great fit for.
+                          Top Rated and Rising Talent programs. Enjoy higher visibility with the added status of prestigious programs.
+                          Do substantial work with top clients. GetLance pricing encourages freelancers to use GetLance for repeat relationships with their clients.</p> -->
+      </div>
+      <div class="col-md-6 how-img">
+          <img src="https://image.ibb.co/gQ9iE9/Work_Section2_freelance_img4.png" class="rounded-circle img-fluid" alt=""/>
+      </div>
+  </div>
+
+
+
+                    <div class="row">
+                      <div class="col-md-6 how-img">
+                          <img src="https://image.ibb.co/cHgKnU/Work_Section2_freelance_img2.png" class="rounded-circle img-fluid" alt=""/>
+                      </div>
+                        <div class="col-md-6">
+                            <h4 style="border-bottom: 3px solid #000;padding-bottom:5px;white-space: pre;"> CAREERS </h4>
+                            <h4 class="subheading"> Teaching faternity for all subjects. </h4> <br>
+
+                                        <button data-toggle="modal" data-target="#sem-reg" class="btn btn-warning"> <b> APPLY </b> </button>
+                                        <!-- <a data-toggle="modal" data-target="#sem-reg" class="btn btn-link btn-block">
+                                            Read More
+                                        </a> -->
+                                      <!-- /  <p class="text-muted">Streamlined hiring. GetLance’s sophisticated algorithms highlight projects you’re a great fit for. -->
+                                            <!-- Top Rated and Rising Talent programs. Enjoy higher visibility with the added status of prestigious programs. -->
+                                            <!-- Do substantial work with top clients. GetLance pricing encourages freelancers to use GetLance for repeat relationships with their clients.</p> -->
+                        </div>
+
+                    </div>
+
+                  </div>
+
+                  <!-- <div class="container">
+                    <div class="row">
+
+                        <h4 style="border-bottom: 3px solid #000;padding-bottom:5px;white-space: pre;" >   SALIENT FEATURES  </h4>
+                      </div>
+                    </div> -->
+
+                    <div class="container">
+
+
+
+                        <ul class="list-group list-group-flush">
+
+                          <button type="button" class="list-group-item list-group-item-action active bg-success">
+                            <h4 >   SALIENT FEATURES  </h4>
+
+                            <!-- SALIENT FEATURES -->
+                          </button>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                             Well Expirenced teachers with a minimum of 5+ years in respective board's evaluation
+                             <!-- <span class="badge badge-primary badge-pill"><i class="fa fa-check" aria-hidden="true"></i></span> -->
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                             Individual attention to every child
+                            <!-- <span class="badge badge-primary badge-pill">2</span> -->
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Reasonable Fee Structure
+                            <!-- <span class="badge badge-primary badge-pill">1</span> -->
+                          </li>
+
+                          <!-- <div class="list-group"> -->
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              All Subjects under one roof
+                              <!-- <span class="badge badge-primary badge-pill">14</span> -->
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              Quality of education emphasized
+                              <!-- <span class="badge badge-primary badge-pill">2</span> -->
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              Own Study Materials for 9th and 10th
+                              <!-- <span class="badge badge-primary badge-pill">1</span> -->
+                            </li>
+                          <!-- </div> -->
+
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Maximun Number of Students in each batch is 18
+                            <!-- <span class="badge badge-primary badge-pill">14</span> -->
+                          </li>
+
+                          <li class="list-group-item"></li>
+                        </ul>
+                      </div><br><br>
+
+                      <!-- <div class="container">
+                        <div class="row">
+
+                          <h4 style="border-bottom: 3px solid #000;padding-bottom:5px;white-space: pre;" >   OUR FACILITIES   </h4>
+                        </div>
+                      </div><br> -->
+
+
+                      <div class="container text-center my-3">
+
+                        <h4 style="border-bottom: 3px solid #000;padding-bottom:5px;white-space: pre;" >   OUR FACILITIES   </h4><br>
+
+                          <!-- <h3>Bootstrap 4 Multiple Item Carousel</h3> -->
+                          <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                              <div class="carousel-inner w-100" role="listbox">
+                                  <div class="carousel-item row no-gutters active">
+                                      <div class="col-3 float-left"><img class="img-fluid" src="{{gh[3]['img_src']}}"></div>
+                                      <div class="col-3 float-left"><img class="img-fluid" src="{{gh[4]['img_src']}}"></div>
+                                      <div class="col-3 float-left"><img class="img-fluid" src="{{gh[5]['img_src']}}"></div>
+                                      <div class="col-3 float-left"><img class="img-fluid" src="{{gh[6]['img_src']}}"></div>
+                                  </div>
+                                  <div class="carousel-item row no-gutters">
+                                      <div class="col-3 float-left"><img class="img-fluid" src="{{gh[7]['img_src']}}"></div>
+                                      <div class="col-3 float-left"><img class="img-fluid" src="{{gh[8]['img_src']}}"></div>
+                                      <div class="col-3 float-left"><img class="img-fluid" src="{{gh[9]['img_src']}}"></div>
+                                      <div class="col-3 float-left"><img class="img-fluid" src="{{gh[10]['img_src']}}"></div>
+                                  </div>
+                              </div>
+                              <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                              </a>
+                          </div>
+
+                      </div>
+
+<br><br>
+
+
+      <!-- The Modal -->
+      <div class="modal fade seminor-login-modal" data-backdrop="static" id="sem-reg">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body seminor-login-modal-body">
+             <h5 class="modal-title text-center"> Contact Us </h5>
+
+              <button type="button" class="close" data-dismiss="modal">
+                  <span><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+              </button>
+
+              <form class="seminor-login-form" action="/careers_save" method="post">
+                <div class="form-group">
+                  <input type="name" class="form-control" name="name" required autocomplete="off">
+                  <label class="form-control-placeholder" for="name"> Name</label>
+                </div>
+                <input style="display:none;" type="text" name="bran" value="malleswaram" />
+                <div class="form-group">
+                  <input type="tel" class="form-control" name="ph_number" required autocomplete="off">
+                  <label class="form-control-placeholder" for="name">Phone Number</label>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" required autocomplete="off">
+                  <label class="form-control-placeholder" for="email">Email address</label>
+                </div>
+
+                <div class="form-group">
+                  <!-- <label class="select-form-control-placeholder" for="sel1"> Gender </label> -->
+                  <select class="form-control" id="sel1" name="branch">
+                    <option value=""> --Select Branch -- </option>
+                    <option value="malleswaram"> Malleswaram </option>
+                    <option value="dasarahalli"> T. Dasarahalli </option>
+                    <option value="yelahanka"> Yelahanka </option>
+                  </select>
+                </div>
+
+
+                <div class="form-group">
+                  <input type="name" class="form-control" name="classesto" required autocomplete="off">
+                  <label class="form-control-placeholder" for="name"> Classes to teach ? </label>
+                </div>
+
+                <div class="form-group">
+                  <input type="tel" class="form-control" name="subjects" required autocomplete="off">
+                  <label class="form-control-placeholder" for="name"> Subjects ? </label>
+                </div>
+                <!-- <div class="form-group">
+                  <input type="password" class="form-control" name="password" required autocomplete="off">
+                  <label class="form-control-placeholder" for="password">Password</label>
+                </div> -->
+
+                <!-- <div class="form-group forgot-pass-fau text-center ">
+                  <a href="/terms-conditions/" class="text-secondary">
+                      By Clicking "SIGN UP" you accept our<br>
+                  <span class="text-primary-fau">Terms and Conditions</span>
+                  </a>
+                </div> -->
+
+              <div class="btn-check-log">
+                  <button type="submit" class="btn btn-block btn-outline-danger">SUBMIT </button>
+              </div>
+              <!-- <div class="create-new-fau text-center pt-3">
+                <a href="#" class="text-primary-fau"><span data-toggle="modal" data-target="#sem-login" data-dismiss="modal">Already Have An Account</span></a>
+              </div> -->
+            </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+</body>
+<script>
+
+</script>
+</html>
+{% endblock %}
